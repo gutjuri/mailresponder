@@ -23,9 +23,7 @@ for response_part in data:
 		msg = email.message_from_string(response_part[1])
 		varSubject = msg['subject']
 		varFrom = msg['from']
-typ, data = mail.search(None, "ALL")
-for num in data[0].split():
-   mail.store(num, '+FLAGS', '\\Deleted')
+mail.store(latest_email_id, '+FLAGS', '\\Deleted')
 mail.expunge()
 
 
