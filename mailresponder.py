@@ -18,11 +18,8 @@ ids = data[0]
 id_list = ids.split()
 latest_email_id = id_list[-1]
 typ, data = mail.fetch(latest_email_id, '(RFC822)' )
-for response_part in data:
-	if isinstance(response_part, tuple):
-		msg = email.message_from_string(response_part[1])
-		varSubject = msg['subject']
-		varFrom = msg['from']
+msg = email.message_from_string(data[0][1])
+varFrom = msg['from']
 mail.store(latest_email_id, '+FLAGS', '\\Deleted')
 mail.expunge()
 
