@@ -24,7 +24,7 @@ for mail_id in id_list:
 	varFrom = msg["from"]
 	varSub = msg["subject"]
 	mail.store(mail_id, '+FLAGS', '\\Deleted')
-	with open("adresses.txt") as f:
+	with open("whitelist.txt") as f:
 		addr = f.read().splitlines()
 	send = True
 	for ad in addr:
