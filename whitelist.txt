@@ -1,0 +1,7 @@
+# have a file like this to exclude certain sender adresses from recieving an automated reply
+# if you dont want that, just have an empty file "whitelist.txt" or delete the corresponding lines from mailresponder.py
+# otherwise, list the desired mail adresses like this:
+
+sample@sample123.com
+sample2@sample321.tr
+sfsdfsdfasd@asdasdasd.com
