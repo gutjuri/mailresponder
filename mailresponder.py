@@ -23,6 +23,7 @@ for mail_id in id_list:
 	msg = email.message_from_string(data[0][1])
 	varFrom = msg["from"]
 	varSub = msg["subject"]
+	# if you don't want all incoming messages deleted, comment out the following line
 	mail.store(mail_id, '+FLAGS', '\\Deleted')
 	with open("whitelist.txt") as f:
 		addr = f.read().splitlines()
